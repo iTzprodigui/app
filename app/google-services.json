@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "627816617825",
+    "firebase_url": "https://montessori-45cc9-default-rtdb.firebaseio.com",
+    "project_id": "montessori-45cc9",
+    "storage_bucket": "montessori-45cc9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627816617825:android:2f8c186bedfdc11e3bd720",
+        "android_client_info": {
+          "package_name": "com.auliarifqi.registerloginapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627816617825-6ndje359nm30ssb8bv544o3r9mq8kk0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWGGQaYLHFwr8d87iKmbGDSyoP8uYYHx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627816617825-6ndje359nm30ssb8bv544o3r9mq8kk0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
