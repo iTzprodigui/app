@@ -11,6 +11,7 @@ data class Usuario(
     var first_name: String? = null,
     var grado: Long? = null,
     var grupo: String? = null,
+    var imagen: String? = null,
     var last_name: String? = null,
     var matricula: Long? = null,
     var pagos: List<Pago>? = null,

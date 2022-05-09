@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -71,6 +72,7 @@ class HomeActivity : AppCompatActivity() {
 //                    }
 
                     //Set Data
+                    Glide.with(this@HomeActivity).load(usuario.imagen.toString()).into(profile_image);
                     tvNama2.setText(usuario.first_name.toString())
                 }
                 override fun onCancelled(databaseError: DatabaseError) {}
