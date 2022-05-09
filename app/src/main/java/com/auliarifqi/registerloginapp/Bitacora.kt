@@ -1,6 +1,8 @@
 package com.auliarifqi.registerloginapp
 
-class Bitacora {
+import java.io.Serializable
+
+class Bitacora : Serializable {
     var fecha:String? = null
     var maestra:String? = null
     var mensaje:String? = null

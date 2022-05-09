@@ -12,13 +12,17 @@ class BitacoraActivity : AppCompatActivity() {
         this.supportActionBar?.hide()
         setContentView(R.layout.activity_bitacora)
 
-        val list =  intent.getSerializableExtra("list") as ArrayList<Bitacora>
+        val bundle = intent.extras
+
+        var array = bundle!!.getStringArrayList("list")
+
+        //val list =  intent.getSerializableExtra("list") as ArrayList<Bitacora>
 //        val maestra =  intent.getStringExtra("maestra")
 //        val fecha =  intent.getStringExtra("fecha")
 //        val mensaje =  intent.getStringExtra("mensaje")
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewBitacora)
 
-        val adapter = BitacoraAdapter(list)
+        val adapter = BitacoraAdapter(array as ArrayList<Bitacora>)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter

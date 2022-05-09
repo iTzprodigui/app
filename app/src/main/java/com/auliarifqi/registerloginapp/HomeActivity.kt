@@ -89,7 +89,9 @@ class HomeActivity : AppCompatActivity() {
         }
 
         textBitacora.setOnClickListener {
+
             val intent = Intent(this,BitacoraActivity::class.java)
+            //intent.putExtra("list",bitacoralist)
             intent.putExtra("list", bitacoralist)
 ////            intent.putExtra("maestra", maestra)
 ////            intent.putExtra("fecha", fecha)

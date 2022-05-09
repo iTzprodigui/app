@@ -47,7 +47,7 @@ class BitacoraAdapter(private val bitacoralist: ArrayList<Bitacora>): RecyclerVi
     }
 
     override fun getItemCount(): Int {
-        return maestras.size
+        return bitacoralist.size
     }
 
 }
