@@ -1,6 +1,7 @@
 package com.auliarifqi.registerloginapp
 
 import com.google.firebase.database.IgnoreExtraProperties
+import java.io.Serializable
 
 @IgnoreExtraProperties
 data class Usuario(
@@ -13,5 +14,4 @@ data class Usuario(
     var last_name: String? = null,
     var matricula: Long? = null,
     var pagos: List<Pago>? = null,
-
-)
+):Serializable

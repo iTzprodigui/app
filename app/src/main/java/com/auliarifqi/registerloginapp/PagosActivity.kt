@@ -13,8 +13,12 @@ class PagosActivity : AppCompatActivity() {
         this.supportActionBar?.hide()
         setContentView(R.layout.activity_pagos)
 
+        val bundle = intent.extras
+
+        var array = bundle!!.getStringArrayList("listP")
+
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewPagos)
-        val adapter = PagosAdapter()
+        val adapter = PagosAdapter(array as ArrayList<Pago>)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter

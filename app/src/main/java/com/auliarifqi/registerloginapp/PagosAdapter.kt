@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PagosAdapter: RecyclerView.Adapter<PagosAdapter.ViewHolder>(){
+class PagosAdapter(private val pagolist: ArrayList<Pago>): RecyclerView.Adapter<PagosAdapter.ViewHolder>(){
 
     val fechas = arrayOf("26/04/2022","26/03/2022","26/02/2022")
 
@@ -34,13 +34,13 @@ class PagosAdapter: RecyclerView.Adapter<PagosAdapter.ViewHolder>(){
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
-        viewHolder.itemFecha.text = fechas[i]
-        viewHolder.itemMensualidad.text = mensualidades[i]
-        viewHolder.itemCantidadPago.text = cantidadPago[i]
+        viewHolder.itemFecha.text = pagolist[i].fecha.toString()
+        viewHolder.itemMensualidad.text = pagolist[i].concepto.toString()
+        viewHolder.itemCantidadPago.text = pagolist[i].importe.toString()
     }
 
     override fun getItemCount(): Int {
-        return fechas.size
+        return pagolist.size
     }
 
 }
