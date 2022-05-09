@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -72,7 +72,11 @@ class HomeActivity : AppCompatActivity() {
 //                    }
 
                     //Set Data
-                    Glide.with(this@HomeActivity).load(usuario.imagen.toString()).into(profile_image);
+                    Picasso.get().load(usuario.imagen.toString())
+                        .placeholder(R.drawable.ic_launcher_background)
+                        .error(R.drawable.ic_launcher_foreground)
+                        .into(profile_image)
+
                     tvNama2.setText(usuario.first_name.toString())
                 }
                 override fun onCancelled(databaseError: DatabaseError) {}
