@@ -2,15 +2,14 @@ package com.auliarifqi.registerloginapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_home.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 class HomeActivity : AppCompatActivity() {
@@ -48,22 +47,31 @@ class HomeActivity : AppCompatActivity() {
             val menuListener = object: ValueEventListener{
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     //get data
-                    nombre = Objects.requireNonNull(dataSnapshot.child("first_name").value).toString()
-                    apellido = Objects.requireNonNull(dataSnapshot.child("last_name").value).toString()
-                    grado = Objects.requireNonNull(dataSnapshot.child("grado").value).toString()
-                    grupo = Objects.requireNonNull(dataSnapshot.child("grupo").value).toString()
-                    matricula = Objects.requireNonNull(dataSnapshot.child("matricula").value).toString()
-                    ciclo_escolar = Objects.requireNonNull(dataSnapshot.child("ciclo_escolar").value).toString()
-                    bitacoralist.add( Bitacora(
-                            Objects.requireNonNull(dataSnapshot.child("bitacora").child("Fecha").value).toString() as String?,
-                            Objects.requireNonNull(dataSnapshot.child("bitacora").child("Maestra").value).toString() as String?,
-                            Objects.requireNonNull(dataSnapshot.child("bitacora").child("Mensaje").value).toString() as String?
-                        )
-                    )
+//                    nombre = Objects.requireNonNull(dataSnapshot.child("first_name").value).toString()
+//                    apellido = Objects.requireNonNull(dataSnapshot.child("last_name").value).toString()
+//                    grado = Objects.requireNonNull(dataSnapshot.child("grado").value).toString()
+//                    grupo = Objects.requireNonNull(dataSnapshot.child("grupo").value).toString()
+//                    matricula = Objects.requireNonNull(dataSnapshot.child("matricula").value).toString()
+//                    ciclo_escolar = Objects.requireNonNull(dataSnapshot.child("ciclo_escolar").value).toString()
+////                    bitacoralist.add( Bitacora(
+////                            Objects.requireNonNull(dataSnapshot.child("bitacora").child("Fecha").value).toString() as String?,
+////                            Objects.requireNonNull(dataSnapshot.child("bitacora").child("Maestra").value).toString() as String?,
+////                            Objects.requireNonNull(dataSnapshot.child("bitacora").child("Mensaje").value).toString() as String?
+////                        )
+////                    )
+                    val usuarios = dataSnapshot.getValue(Usuario::class.java)
+                    Log.d("HomeActivity", usuarios?.bitacora?.get(0)?.maestra.toString())
+                    Log.d("HomeActivity", usuarios?.bitacora?.get(1)?.maestra.toString())
+                    Log.d("HomeActivity", usuarios?.bitacora?.get(2)?.maestra.toString())
+
+//                    if (usuarios != null) {
+//                        Log.d("HomeActivity", usuarios.toString())
+//                    }
+
 
                     //bitacora = (Objects.requireNonNull(dataSnapshot.child("bitacora").value) as ArrayList<String>?)!!
                     //set data
-                    tvNama2.setText(nombre)
+//                    tvNama2.setText(nombre)
 //                    tvEmail2.setText(email)
 //                    tvPhone2.setText(phone)
                 }

@@ -1,15 +1,11 @@
 package com.auliarifqi.registerloginapp
 
-import java.io.Serializable
+import com.google.firebase.database.IgnoreExtraProperties
 
-class Bitacora : Serializable {
-    var fecha:String? = null
-    var maestra:String? = null
+
+@IgnoreExtraProperties
+data class Bitacora(
+    var fecha:String? = null,
+    var maestra:String? = null,
     var mensaje:String? = null
-
-    constructor(fecha:String?,maestra: String?, mensaje: String?) {
-        this.fecha = fecha
-        this.maestra = maestra
-        this.mensaje = mensaje
-    }
-}
+)
